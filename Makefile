@@ -1,5 +1,6 @@
 IMAGES = \
-	centos7-systemd
+	centos7-systemd \
+	centos7-build
 
 REGISTRY = docker.io/alekseychudov
 TAG = staging

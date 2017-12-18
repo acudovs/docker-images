@@ -1,0 +1,8 @@
+yum -y update
+yum -y install "@Development Tools"
+
+yum clean all
+rm -frv /var/cache/yum /var/log/yum.log
+find /etc -name "*-" -o -name "*.bak" -o -name "*.rpmnew" -o -name "*.rpmsave" | xargs rm -fv
+
+rm -fv "$0"
