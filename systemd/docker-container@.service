@@ -1,0 +1,13 @@
+[Unit]
+Description=Docker container %i service
+Requires=docker.service
+After=docker.service
+
+[Service]
+ExecStart=/usr/bin/docker start -a %i
+ExecStop=/usr/bin/docker stop %i
+Restart=on-failure
+SuccessExitStatus=2
+
+[Install]
+WantedBy=multi-user.target
