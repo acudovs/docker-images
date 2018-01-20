@@ -1,5 +1,5 @@
 yum -y update
-yum -y install "@Development Tools"
+yum -y install "@Development Tools" vim-enhanced wget
 
 yum clean all
 rm -frv /var/cache/yum /var/log/yum.log
