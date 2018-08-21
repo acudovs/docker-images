@@ -7,50 +7,50 @@ git clone https://github.com/AlekseyChudov/docker-images.git
 cd docker-images
 ```
 
-Build all images and tag them as **staging** (default):
+Build all images and tag them as **latest** (default):
 
 ```
 make
 ```
 
-Push all **staging** (default) images to registry:
+Push all **latest** (default) images to registry:
 
 ```
 make push
 ```
 
-Pull all **staging** (default) images from registry and tag them as **latest**:
+Pull all **latest** (default) images from registry and tag them as **mytag**:
 
 ```
-make tag -e SET_TAG=latest
+make tag -e SET_TAG=mytag
 ```
 
-Push all **latest** images to registry:
+Push all **mytag** images to registry:
 
 ```
-make push -e TAG=latest
+make push -e TAG=mytag
 ```
 
-Build single image and tag it as **staging** (default):
+Build single image and tag it as **latest** (default):
 
 ```
 make -e IMAGES=centos7-systemd
 ```
 
-Push single **staging** (default) image to registry:
+Push single **latest** (default) image to registry:
 
 ```
 make push -e IMAGES=centos7-systemd
 ```
 
-Pull single **staging** (default) image from registry and tag is as **latest**:
+Pull single **latest** (default) image from registry and tag is as **mytag**:
 
 ```
-make tag -e IMAGES=centos7-systemd -e SET_TAG=latest
+make tag -e IMAGES=centos7-systemd -e SET_TAG=mytag
 ```
 
-Push single **latest** image to registry:
+Push single **mytag** image to registry:
 
 ```
-make push -e IMAGES=centos7-systemd -e TAG=latest
+make push -e IMAGES=centos7-systemd -e TAG=mytag
 ```
