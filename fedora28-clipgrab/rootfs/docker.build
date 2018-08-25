@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -e
+
+yum -y install "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
+yum -y update
+yum -y install ffmpeg findutils fuse-libs openssh-server qtwebkit xorg-x11-xauth
+
+/usr/libexec/openssh/sshd-keygen rsa
+/usr/libexec/openssh/sshd-keygen ecdsa
+/usr/libexec/openssh/sshd-keygen ed25519
+
+curl -s "https://download.clipgrab.org/ClipGrab-$CLIPGRAB_VERSION-x86_64.AppImage" -o ClipGrab.AppImage
+chmod +x ClipGrab.AppImage
+./ClipGrab.AppImage --appimage-extract
+cp squashfs-root/usr/bin/clipgrab /usr/local/bin/clipgrab
+rm -rf ClipGrab.AppImage squashfs-root
+
+useradd -p "" -s /usr/local/bin/clipgrab clipgrab
+echo /usr/local/bin/clipgrab >> /etc/shells
+
+yum clean all
+rm -frv /anaconda-post.log /root/anaconda-ks.cfg /tmp/* /var/cache/yum /var/log/*
+find /etc -name "*-" -o -name "*.bak" -o -name "*.rpmnew" -o -name "*.rpmsave" | xargs rm -fv
+
+rm -fv "$0"
