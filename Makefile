@@ -1,8 +1,7 @@
 IMAGES = \
 	centos7-systemd \
 	centos7-build \
-	centos7-corosync-qnetd \
-	fedora28-clipgrab
+	centos7-corosync-qnetd
 
 REGISTRY = docker.io/alekseychudov
 FROM_TAG = latest
