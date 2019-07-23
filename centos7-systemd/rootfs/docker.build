@@ -9,7 +9,7 @@ yum -y update
 yum -y install bash-completion bind-utils file iproute less lsof net-tools psmisc telnet tcpdump
 
 yum clean all
-rm -frv /anaconda-post.log /root/anaconda-ks.cfg /var/cache/yum /var/log/*
+rm -frv /anaconda-post.log /root/anaconda-ks.cfg /tmp/* /var/cache/yum /var/log/* /var/tmp/*
 find /etc -name "*-" -o -name "*.bak" -o -name "*.rpmnew" -o -name "*.rpmsave" | xargs rm -fv
 
 rm -frv /etc/systemd/system/*.wants /usr/lib/systemd/system/*.wants/*

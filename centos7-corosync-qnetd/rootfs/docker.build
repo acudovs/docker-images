@@ -6,7 +6,7 @@ yum -y update
 yum -y install corosync-qnetd pcs
 
 yum clean all
-rm -frv /var/cache/yum /var/log/yum.log
+rm -frv /tmp/* /var/cache/yum /var/log/* /var/tmp/*
 find /etc -name "*-" -o -name "*.bak" -o -name "*.rpmnew" -o -name "*.rpmsave" | xargs rm -fv
 
 ln -svt /etc/systemd/system/multi-user.target.wants /usr/lib/systemd/system/pcsd.service
