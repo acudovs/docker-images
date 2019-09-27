@@ -1,4 +1,4 @@
-#!/usr/bin/env -S bash -x
+#!/usr/bin/env -S bash -ex
 
 export REGISTRY_AUTH_FILE="/etc/containers/auth.json"
 
