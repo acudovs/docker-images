@@ -18,7 +18,7 @@ yum -y install epel-release
 yum -y update
 
 # Additional settings
-yum -y install bash-completion bind-utils iproute less lsof net-tools psmisc telnet tcpdump
+yum -y install bash-completion bind-utils iproute iputils less lsof net-tools psmisc telnet tcpdump
 cp /etc/skel/.bashrc /root/
 echo alias l=\"ls -lAF\" >> /root/.bashrc
 
