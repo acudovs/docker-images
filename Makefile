@@ -1,5 +1,8 @@
 # Ordered list of images to build (override with "-e" command line option)
 IMAGES = \
+	centos7-systemd \
+	centos7-build \
+	centos7-corosync-qnetd \
 	centos8-systemd \
 	centos8-build
 
