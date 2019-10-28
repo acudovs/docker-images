@@ -8,7 +8,8 @@ working_container="$(buildah from --pull "${from}")"
 
 # Customize working container
 buildah run "${working_container}" -- bash -cex '
-yum -y install "@Development Tools" vim-enhanced wget
+yum -y update
+yum -y install "@Development Tools" vim-enhanced
 
 # Final cleaning
 yum clean all

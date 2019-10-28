@@ -8,11 +8,12 @@ working_container="$(buildah from --pull "${from}")"
 
 # Customize working container
 buildah run "${working_container}" -- bash -cex '
-yum -y install "@Development Tools" vim-enhanced wget
+yum -y update
+yum -y install "@Development Tools" vim-enhanced
 
 # Final cleaning
 yum clean all
-rm -frv /tmp/* /var/cache/dnf /var/log/* /var/tmp/*
+rm -frv /tmp/* /var/cache/yum /var/log/* /var/tmp/*
 find /etc -name "*-" -o -name "*.bak" -o -name "*.rpmnew" -o -name "*.rpmsave" | xargs rm -fv
 '
 

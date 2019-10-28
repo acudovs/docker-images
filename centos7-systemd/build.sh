@@ -33,7 +33,7 @@ sed -i "/Requires=.*umount.target/s/ *umount.target//g" /usr/lib/systemd/system/
 
 # Final cleaning
 yum clean all
-rm -frv /tmp/* /var/cache/dnf /var/log/* /var/tmp/*
+rm -frv /tmp/* /var/cache/yum /var/log/* /var/tmp/*
 find /etc -name "*-" -o -name "*.bak" -o -name "*.rpmnew" -o -name "*.rpmsave" | xargs rm -fv
 '
 
