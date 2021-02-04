@@ -11,6 +11,8 @@ buildah run "${working_container}" -- bash -cex '
 yum -y update
 yum -y install "@Development Tools" vim-enhanced
 
+echo alias vi=\"vim\" >> /root/.bashrc
+
 # Final cleaning
 yum clean all
 rm -frv /tmp/* /var/cache/dnf /var/log/* /var/tmp/*
