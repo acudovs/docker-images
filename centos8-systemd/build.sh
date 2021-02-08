@@ -28,8 +28,12 @@ ln -rsvt /usr/lib/systemd/system/sockets.target.wants /usr/lib/systemd/system/sy
 ln -rsvt /usr/lib/systemd/system/sysinit.target.wants /usr/lib/systemd/system/systemd-tmpfiles-setup.service
 ln -rsvt /usr/lib/systemd/system/timers.target.wants /usr/lib/systemd/system/systemd-tmpfiles-clean.timer
 
-# Do not execute umount.target to prevent shutdown errors
-sed -i "/Requires=.*umount.target/s/ *umount.target//g" /usr/lib/systemd/system/*.service
+# Do not require umount.target to prevent shutdown errors
+for service in /usr/lib/systemd/system/*.service; do
+    if test -f "${service}" && grep -q "Requires=.*umount.target" "${service}"; then
+        sed -i "/Requires=.*umount.target/s/ *umount.target//g" "${service}"
+    fi
+done
 
 # Final cleaning
 yum clean all
