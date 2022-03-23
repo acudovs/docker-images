@@ -1,6 +1,6 @@
 #!/usr/bin/env -S bash -ex
 
-from="docker.io/library/centos:8"
+from="docker.io/library/oraclelinux:8"
 name="${REGISTRY}/${IMAGE}:${SET_TAG}"
 
 # Create working container

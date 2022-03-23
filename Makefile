@@ -2,9 +2,8 @@
 IMAGES = \
 	centos7-systemd \
 	centos7-build \
-	centos7-corosync-qnetd \
-	centos8-systemd \
-	centos8-build
+	oraclelinux8-systemd \
+	oraclelinux8-build
 
 REGISTRY = docker.io/alekseychudov
 FROM_TAG = latest
