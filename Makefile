@@ -4,6 +4,8 @@ IMAGES = \
 	centos7-build \
 	almalinux8-systemd \
 	almalinux8-build \
+	almalinux9-systemd \
+	almalinux9-build \
 	oraclelinux8-systemd \
 	oraclelinux8-build
 
