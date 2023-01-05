@@ -4,7 +4,7 @@ from="${REGISTRY}/centos7-systemd:${FROM_TAG}"
 name="${REGISTRY}/${IMAGE}:${SET_TAG}"
 
 # Create working container
-working_container="$(buildah from --pull "${from}")"
+working_container="$(buildah from --pull-never "${from}")"
 
 # Customize working container
 buildah run "${working_container}" -- bash -cex '

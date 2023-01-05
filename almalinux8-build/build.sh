@@ -1,6 +1,6 @@
 #!/usr/bin/env -S bash -ex
 
-from="${REGISTRY}/oraclelinux8-systemd:${FROM_TAG}"
+from="${REGISTRY}/almalinux8-systemd:${FROM_TAG}"
 name="${REGISTRY}/${IMAGE}:${SET_TAG}"
 
 # Create working container

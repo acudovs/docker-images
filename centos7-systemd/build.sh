@@ -4,7 +4,7 @@ from="docker.io/library/centos:7"
 name="${REGISTRY}/${IMAGE}:${SET_TAG}"
 
 # Create working container
-working_container="$(buildah from --pull "${from}")"
+working_container="$(buildah from --pull-always "${from}")"
 
 # Customize working container
 buildah config --cmd "/usr/lib/systemd/systemd" "${working_container}"
