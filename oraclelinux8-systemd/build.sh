@@ -12,6 +12,11 @@ buildah config --env "container=docker" "${working_container}"
 buildah config --stop-signal "SIGRTMIN+3" "${working_container}"
 
 buildah run "${working_container}" -- bash -cex '
+
+# Do not install docs by default
+yum -y --nodocs install yum-utils
+yum-config-manager --setopt=tsflags=nodocs --save
+
 yum -y install epel-release
 yum -y update
 yum -y install bash-completion bind-utils glibc-langpack-en iproute iputils less lsof net-tools procps-ng psmisc telnet tcpdump
