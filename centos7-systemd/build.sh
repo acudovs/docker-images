@@ -14,7 +14,7 @@ buildah config --stop-signal "SIGRTMIN+3" "${working_container}"
 buildah run "${working_container}" -- bash -cex '
 yum -y install epel-release
 yum -y update
-yum -y install bash-completion bind-utils iproute iputils less lsof net-tools psmisc telnet tcpdump
+yum -y install bash-completion bind-utils iproute iputils less lsof net-tools procps-ng psmisc telnet tcpdump
 
 cp /etc/skel/.bashrc /root/
 echo alias ..=\"cd ..\" >> /root/.bashrc
