@@ -7,7 +7,9 @@ IMAGES = \
 	almalinux9-systemd \
 	almalinux9-build \
 	oraclelinux8-systemd \
-	oraclelinux8-build
+	oraclelinux8-build \
+	oraclelinux9-systemd \
+	oraclelinux9-build
 
 REGISTRY = docker.io/alekseychudov
 FROM_TAG = latest
@@ -39,12 +41,10 @@ tag: pull
 		podman tag "$(REGISTRY)/$${image}:$(FROM_TAG)" "$(REGISTRY)/$${image}:$(SET_TAG)"; \
 	done
 
-clean-build:
-
 clean-containers:
 	podman rm --all --force
 
 clean-images:
 	podman rmi --all --force
 
-clean-all: clean-build clean-containers clean-images
+clean-all: clean-containers clean-images
