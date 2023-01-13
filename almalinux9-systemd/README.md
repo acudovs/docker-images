@@ -1,6 +1,6 @@
 AlmaLinux 9 based systemd image https://hub.docker.com/r/alekseychudov/almalinux9-systemd
 
-# How to run AlamaLinux 9 systemd container
+# How to run AlmaLinux 9 systemd container
 
 ## Podman containter
 
